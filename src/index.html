@@ -2,13 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>MAPAngular</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Levio Map</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <base href="/">
+  <link href="assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendors/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="assets/vendors/selectFX/css/cs-skin-elastic.css">
+  <link rel="stylesheet" href="assets/vendors/jqvmap/dist/jqvmap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/vendors/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="assets/vendors/selectFX/css/cs-skin-elastic.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap/css/bootstrap.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="assets/fonts/iconic/css/material-design-iconic-font.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="assets/vendors/animate/animate.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="assets/vendors/css-hamburgers/hamburgers.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="assets/vendors/animsition/css/animsition.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="assets/vendors/select2/select2.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="assets/vendors/daterangepicker/daterangepicker.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="assets/css/util.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <app-root></app-root>
+<body hold-transition>
+<app-root>Loading ...</app-root>
+<script src="assets/vendors/jquery/dist/jquery.min.js"></script>
+<script src="assets/vendors/popper.js/dist/umd/popper.min.js"></script>
+<script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+<script src="assets/vendors/chart.js/dist/Chart.bundle.min.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/widgets.js"></script>
+<script src="assets/vendors/jqvmap/dist/jquery.vmap.min.js"></script>
+<script src="assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<script src="assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script>
+    (function($) {
+        "use strict";
+
+        jQuery('#vmap').vectorMap({
+            map: 'world_en',
+            backgroundColor: null,
+            color: '#ffffff',
+            hoverOpacity: 0.7,
+            selectedColor: '#1de9b6',
+            enableZoom: true,
+            showTooltip: true,
+            values: sample_data,
+            scaleColors: ['#1de9b6', '#03a9f5'],
+            normalizeFunction: 'polynomial'
+        });
+    })(jQuery);
+</script>
+<!--===============================================================================================-->
+<script src="assets/vendors/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="assets/vendors/bootstrap/js/popper.js"></script>
+<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="assets/vendors/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="assets/vendors/daterangepicker/moment.min.js"></script>
+<script src="assets/vendors/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="assets/vendors/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>
