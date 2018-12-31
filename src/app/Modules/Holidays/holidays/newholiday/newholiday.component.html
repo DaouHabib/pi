@@ -1,0 +1,34 @@
+<ngb-alert [type]="'success'" [hidden]="!added" (close)="close()">Opération effectuée avec succès</ngb-alert>
+<form [formGroup]="holidayForm" (ngSubmit)="ajouter()">
+
+  Nom: <br/>
+  <input formControlName="name" type="text" required> <br>
+  <div *ngIf="holidayForm.get('name').hasError('required')">
+    ce champ est obligatoire
+  </div>
+  <div *ngIf="holidayForm.get('name').hasError('maxlength')">
+    le nombre de caractères ne doit pas dépasser 50
+  </div>
+
+  <br>
+
+  Date de début: <br/>
+  <ngb-datepicker formControlName="startdate" required></ngb-datepicker>
+  <!--<input type="date" formControlName="startdate" required>--><br>
+  <div *ngIf="holidayForm.get('startdate').hasError('required')">
+    ce champ est obligatoire
+  </div>
+
+  <br>
+
+  Date de Fin: <br/>
+  <ngb-datepicker formControlName="enddate" required></ngb-datepicker>
+  <div *ngIf="holidayForm.get('enddate').hasError('required')">
+    ce champ est obligatoire
+  </div>
+
+  <br>
+  <button class="col-md-3 btn btn-success" type="submit" [disabled]="holidayForm.invalid">New Holiday</button><br/>
+  <button routerLink="/logged/holidays" class="col-md-3 btn btn-success">Go back</button>
+</form>
+

@@ -1,0 +1,43 @@
+
+<section id="browseCategories" class="PageJob-browse">
+
+  <div class="col-md-4 text-center">
+    <button routerLink="new" class="col-md-4 btn btn-success" type="submit">New Skill</button>
+  </div>
+
+  <div class="Container">
+    <h2 class="PageJob-title">
+      Browse all Skills
+    </h2><br>
+    <form>
+      <input type="text" name="search" placeholder="search.." [(ngModel)]="searchtext" (keyup)="search()" style="border:1px solid black;">
+    </form>
+    <ng-container *ngFor="let c of categories">
+      <header class="PageJob-category-heading Grid">
+        <div class="Grid-col Grid-col--tablet-7 Grid-col--desktopSmall-8">
+          <h3 class="PageJob-category-title">
+            {{ c }}
+          </h3>
+        </div>
+      </header>
+      <ul class="PageJob-browse-list Grid">
+        <ng-container *ngFor="let s of skills">
+
+          <li *ngIf="s.category == c" class="Grid-col Grid-col--6 Grid-col--tablet-4 Grid-col--desktopSmall-3" data-job-category-item="s.name">
+            <a routerLink="/logged/skills" (click)="supprimer(s.skillId)"><i class="fa fa-trash" style="width:10px;height:10px;"></i></a>
+            &nbsp;<a class="PageJob-category-link">
+            {{s.name}} &nbsp;
+          </a>
+
+          </li>
+        </ng-container>
+
+      </ul>
+    </ng-container>
+    <br />
+  </div>
+</section>
+<footer>
+  <p>Default pagination:</p>
+  <ngb-pagination [collectionSize]="15" [(page)]="page" (click)="loadpage()" aria-label="Default pagination"></ngb-pagination>
+</footer>

@@ -1,0 +1,353 @@
+.InputCombo {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4px
+}
+
+.InputCombo-inner {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  width: 100%
+}
+
+.InputCombo-inner--divider {
+  border-radius: 0;
+  border-right: 1px solid #DEDEDE
+}
+
+.InputCombo-inner--secondary {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto
+}
+
+.InputCombo-icon {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 8px
+}
+
+.InputCombo .InputCombo-input.InputCombo-input {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0 8px
+}
+
+.InputCombo .InputCombo-input.InputCombo-input:focus {
+  box-shadow: none
+}
+
+.InputCombo-title {
+  font-size: 13px;
+  font-size: .8125rem;
+  line-height: 1.2;
+  color: #1f2836;
+  display: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 16px auto;
+  text-transform: uppercase
+}
+
+.InputCombo-btn {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  white-space: nowrap
+}
+
+.InputCombo-btn--secondary {
+  border-left: 1px solid #DEDEDE
+}
+
+.InputCombo-btn--secondary:hover {
+  border-left: 1px solid #DEDEDE
+}
+
+.InputCombo--bordered {
+  border: 1px solid #BEC0C2
+}
+
+.InputCombo--compact {
+  padding: 0
+}
+
+.InputCombo--highlighted {
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .12), 0 4px 10px 0 rgba(0, 0, 0, .16)
+}
+
+.InputCombo--stacked {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
+}
+
+.InputCombo--stacked .InputCombo-btn {
+  margin-top: 8px;
+  width: 100%
+}
+
+.InputCombo--stacked .InputCombo-inner {
+  border: 1px solid #BEC0C2
+}
+
+@media (max-width:768px) {
+  .is-mobile-first .InputCombo {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative
+  }
+  .is-mobile-first .InputCombo-input {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5
+  }
+  .is-mobile-first .InputCombo-btn {
+    margin-top: 8px;
+    width: 100%
+  }
+  .is-mobile-first .InputCombo-inner {
+    border: 1px solid #BEC0C2;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%
+  }
+  .is-mobile-first .InputCombo-inner--divider {
+    margin-bottom: 4px
+  }
+  .is-mobile-first .InputCombo-title {
+    display: block
+  }
+}
+
+.upsell-banner {
+  display: none
+}
+
+.PageJob-title {
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.37
+}
+
+.PageJob-heading {
+  padding: 72px 0
+}
+
+.PageJob-browse {
+  padding: 72px 0;
+  background: #fff
+}
+
+.PageJob-browse-list {
+  padding: 0;
+  list-style: none
+}
+
+.PageJob-searchInput {
+  margin: 48px 0
+}
+
+.PageJob-searchResults {
+  margin-bottom: 48px;
+  padding: 0;
+  list-style-type: none
+}
+
+.PageJob-majorCategory {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 16px
+}
+
+.PageJob-majorCategory-button {
+  padding: 0;
+  border: 0;
+  text-align: left;
+  background: 0 0;
+  cursor: pointer
+}
+
+.PageJob-majorCategory-illustration {
+  margin-right: 16px
+}
+
+.PageJob-majorCategory-illustration [class*=flicon-] {
+  width: 56px;
+  height: 56px;
+  stroke-width: 1.4
+}
+
+.PageJob-majorCategory-illustration [class*=flicon-] .flicon-colored-element {
+  fill: #73d3ff;
+  stroke: #73d3ff
+}
+
+.PageJob-majorCategory-illustration [class*=flicon-] .flicon-colored-line {
+  stroke: #73d3ff
+}
+
+.PageJob-majorCategory-link {
+  display: block
+}
+
+.PageJob-majorCategory-title {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  display: block;
+  margin-bottom: 8px;
+  color: #1f2836
+}
+
+.PageJob-majorCategory-description {
+  margin-bottom: 16px;
+  color: #1f2836
+}
+
+.PageJob-category {
+  margin-bottom: 64px
+}
+
+.PageJob-category-heading {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #DEDEDE
+}
+
+.PageJob-category-title {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 0
+}
+
+.PageJob-category-ctas {
+  padding-top: 8px
+}
+
+@media (min-width:768px) {
+  .PageJob-category-ctas {
+    padding-top: 0;
+    text-align: right
+  }
+}
+
+.PageJob-category-cta {
+  text-align: center
+}
+
+.PageJob-category-cta:first-child {
+  margin-right: 8px
+}
+
+@media (min-width:768px) {
+  .PageJob-category-cta {
+    text-align: left
+  }
+}
+
+.PageJob-category-link {
+  font-size: 14px;
+  font-size: .875rem;
+  line-height: 1.43;
+  display: inline-block;
+  position: relative;
+  padding: 4px 4px 4px 24px;
+  color: #1f2836
+}
+
+.PageJob-category-link::before {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  content: '';
+  -moz-transform: scale(.9999);
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent #ffc24e;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in
+}
+
+.PageJob-category-link--contest {
+  position: relative;
+  margin-left: 4px;
+  padding-left: 24px;
+  vertical-align: top
+}
+
+.PageJob-category-link--highlighted {
+  color: #0087e0
+}
+
+.PageJob-category-link:hover {
+  text-decoration: none;
+  color: #0087e0
+}
+
+.PageJob-category-link:hover::before {
+  border-left-color: #f77d0e
+}
+
+.PageJob-category-link-icon {
+  fill: #0087e0
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range, .custom-day:hover {
+  background-color: rgb(2, 117, 216);
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgba(2, 117, 216, 0.5);
+}
+
+/*# sourceMappingURL=PageJob-e4221a9a.css.map*/

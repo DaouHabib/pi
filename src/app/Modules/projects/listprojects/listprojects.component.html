@@ -1,0 +1,47 @@
+<section id="browseCategories" class="PageJob-browse">
+    <div class="col-md-4 text-center">
+      <button [routerLink]="['/logged/newProjects']" class="col-md-4 btn btn-success" type="submit">New Project</button>
+      <button (click)="exporter()" class="col-md-4 btn btn-success" type="submit">Exporter</button>
+    </div><br>
+  <div class="container">
+      <div class="span">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>projectType</th>
+       
+            <th>address</th>
+            <th>note</th>
+            <th>profitability</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <th>Supprimer</th>
+            <th>Modifier</th>
+            <th> Owner</th>
+
+           
+  
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let p of ListProjects" >
+            
+            <td>{{p.projectType}}</td>
+            
+            <td>{{p.address}}</td>
+            <td>{{p.note}}</td>
+            <td>{{p.profitability}}</td>
+            <td>{{p.startDate}}</td>
+            <td>{{p.endDate}}</td>
+            <td><button  class=" btn-success" (click)="supprimer(p)" type="submit">Supprimer</button> </td>
+            <td><button  class=" btn-success" [routerLink]="['/logged/update',p.projectId]" type="submit">Modifier</button> </td>
+            
+            <td><button  class=" btn-success" type="submit">Affecter Owner</button> </td>
+          </tr>
+  
+          </tbody>
+        </table>
+    </div>
+  </div>
+  </section>
+  

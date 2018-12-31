@@ -1,0 +1,87 @@
+
+<div class="breadcrumbs">
+  <div class="col-sm-4">
+    <div class="page-header float-left">
+      <div class="page-title">
+        <h1>Mandates</h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="page-header float-right">
+      <div class="page-title">
+        <ol class="breadcrumb text-right">
+          <li><a href="#">List Mandates</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content mt-3">
+  <div class="animated fadeIn">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <strong class="card-title">Current Mandates</strong>
+          </div>
+          <div class="card-body">
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <table id="bootstrap-data-table-export" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table-export_info">
+              <thead>
+              <tr role="row">
+                <th>Resource</th>
+                <th>Project</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Fees</th>
+                <th>Options</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let p of mandates | paginate: { itemsPerPage:1, currentPage: p}" role="row" class="odd">
+                <td>{{ p.project.address}}</td>
+                <td>{{ p.resource.name}}</td>
+                <td>{{p.startDate}}</td>
+                <td>{{p.endDate}}</td>
+                <td>{{p.fee}}</td>
+                <td><button ><i class="fa fa-info-circle"></i></button></td>
+              </tr>
+              <br>
+              <pagination-controls (pageChange)="p =$event"></pagination-controls>
+
+
+            </tbody>
+            </table>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+<script src="../../../../assets/vendors/jquery/dist/jquery.min.js"></script>
+<script src="../../../../assets/vendors/popper.js/dist/umd/popper.min.js"></script>
+<script src="../../../../assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../../../assets/js/main.js"></script>
+<script src="../../../../assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../../../assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../../../assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../../../assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+<script src="../../../../assets/vendors/jszip/dist/jszip.min.js"></script>
+<script src="../../../../assets/vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../../../../assets/vendors/pdfmake/build/vfs_fonts.js"></script>
+<script src="../../../../assets/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../../../../assets/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../../../../assets/vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+<script src="../../../../assets/js/init-scripts/data-table/datatables-init.js"></script>

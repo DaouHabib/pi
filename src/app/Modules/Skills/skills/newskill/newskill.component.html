@@ -1,0 +1,28 @@
+<ngb-alert [type]="'success'" [hidden]="!added" (close)="fermer()">Ajouté</ngb-alert>
+<form [formGroup]="skillForm" (ngSubmit)="ajouter()">
+
+  Categorie:<br/>
+  <select formControlName="category" required>
+    <option *ngFor="let c of categories" value="{{c}}">{{c}}</option>
+  </select>
+  <br>
+  <div *ngIf="skillForm.get('category').hasError('required')">
+    ce champs est obligatoire
+  </div>
+
+  <br>
+
+  Nom: <br/>
+  <input formControlName="name" type="text" required> <br>
+  <div *ngIf="skillForm.get('name').hasError('required')">
+    ce champ est obligatoire
+  </div>
+  <div *ngIf="skillForm.get('name').hasError('maxlength')">
+    le nombre de caractères ne doit pas dépasser 50
+  </div>
+  <br>
+
+  <button class="col-md-3 btn btn-success" type="submit" [disabled]="skillForm.invalid">New Skill</button><br/>
+  <button routerLink="/logged/skills" class="col-md-3 btn btn-success">Go back</button>
+</form>
+

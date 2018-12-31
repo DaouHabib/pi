@@ -1,0 +1,47 @@
+<form>
+
+  
+
+  Date de début: <br/>
+  <input  type="date" ngModel  name="dateDebut" ngModel required [(ngModel)]="dateDebutText" #dateDebut="ngModel"  ><br>
+
+
+  <br>
+
+  Date de Fin: <br/>
+  <input type="date" ngModel  name="dateFin" required [(ngModel)]="dateFinText" #dateFin="ngModel" ><br>
+
+
+
+
+
+  <br>
+
+  Note: <br/>
+  <input type="text"  name="note"  ngModel [(ngModel)]="noteText" #note="ngModel"  > <br>
+
+
+  <br>
+
+  Address: <br/>
+  <input type="text"  name="address"  ngModel [(ngModel)]="addressText" #address="ngModel" > <br>
+
+  <br>
+
+  Owner: <br/>
+  <select type="text"  name="owner"  ngModel [(ngModel)]="ownerText" #address="ngModel" > <br>
+<option *ngFor="let a of clients" value="{{a.userId}}">{{a.name}}</option>
+    </select>
+  <br>
+
+
+
+
+  <button (click)="AddProject(Project)" class="col-md-3 btn btn-success" type="submit" >New Project</button><br/>
+  <button   (click)="naviagte()"  class="col-md-3 btn btn-success">Go back</button>
+  
+</form>
+
+
+  
+  

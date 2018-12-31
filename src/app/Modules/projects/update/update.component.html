@@ -1,0 +1,44 @@
+<form>
+
+  
+
+  Date de début: <br/>
+  <input  type="date" ngModel  name="dateDebut" ngModel required [(ngModel)]="p.startDate" #dateDebut="ngModel"  ><br>
+
+
+  <br>
+
+  Date de Fin: <br/>
+  <input type="date" ngModel  name="dateFin" required [(ngModel)]="p.endDate" #dateFin="ngModel" ><br>
+
+
+
+
+
+  <br>
+
+  Note: <br/>
+  <input type="text"  name="note"  ngModel [(ngModel)]="p.note" #note="ngModel"  > <br>
+
+
+  <br>
+
+  Address: <br/>
+  <input type="text"  name="address"  ngModel [(ngModel)]="p.address" #address="ngModel" > <br>
+
+  <br>
+
+
+  <br>
+
+
+
+
+  <button (click)="updateProject()" class="col-md-3 btn btn-success" type="submit" >update Project</button><br/>
+  <button   (click)="naviagte()"  class="col-md-3 btn btn-success">Go back</button>
+  
+</form>
+
+
+  
+  

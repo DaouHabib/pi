@@ -1,0 +1,103 @@
+<ngb-alert [type]="'warning'" [hidden]="hasresume" (close)="fermer()">Resource has no resume</ngb-alert>
+
+<div class="container" [hidden]="resumeshow">
+  <div class="row">
+
+    <div
+      class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{resource.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3 col-lg-3 " align="center">
+              <img alt="User Pic" [src]="'../../../assets/images/uploads/pictures/'+resource.photo"
+                   class="img-circle img-responsive"></div>
+
+            <div class=" col-md-9 col-lg-9 ">
+              <table class="table table-user-information">
+                <tbody>
+                <tr>
+                  <td>Availability</td>
+                  <td>{{resource.availability}}</td>
+                </tr>
+                <tr>
+                  <td>Contract</td>
+                  <td>{{resource.contractType}}</td>
+                </tr>
+                <tr>
+                  <td>Sector</td>
+                  <td>{{resource.sector}}</td>
+                </tr>
+                <tr>
+                  <td>Seniority</td>
+                  <td>{{resource.seniority}} year(s)</td>
+                </tr>
+                <tr>
+                <tr>
+                  <td>Rate</td>
+                  <td>{{resource.rate}} Eur</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td><a href="mailto:{{resource.emailAddress}}">{{resource.emailAddress}}</a></td>
+                </tr>
+
+                </tbody>
+              </table>
+
+              <a (click)="showresume()"  class="btn btn-primary">Resume</a>
+              <a (click)="showhistory(resource.userId)" class="btn btn-primary">Projects</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- RESUME -->
+
+<div class="container" [hidden]="!resumeshow">
+  <div class="row">
+
+    <div
+      class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{resource.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3 col-lg-3 " align="center">
+              <img alt="User Pic" [src]="'../../../assets/images/uploads/pictures/'+resource.photo"
+                   class="img-circle img-responsive"></div>
+
+            <div class=" col-md-9 col-lg-9 ">
+              <table class="table table-user-information">
+                <tbody>
+                <tr>
+                  <td>Sector</td>
+                  <td>{{resource.sector}}</td>
+                </tr>
+                <tr>
+                  <td>Number of skills</td>
+                  <td>{{skillcount}}</td>
+                </tr>
+                <tr *ngFor="let s of resume.skills">
+                  <td>{{s.category}}</td>
+                  <td>{{s.name}}</td>
+                </tr>
+                </tbody>
+              </table>
+
+              <a (click)="hideresume()"  class="btn btn-primary">Profile</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

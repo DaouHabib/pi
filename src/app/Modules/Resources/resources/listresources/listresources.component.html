@@ -1,0 +1,37 @@
+<section id="browseCategories" class="PageJob-browse">
+  <div class="col-md-4 text-center">
+    <button routerLink="new" class="col-md-5 btn btn-success" type="submit">New Resource</button>
+    <button (click)="exportToExcel()" class="col-md-4 btn btn-success" type="submit">Exporter</button>
+  </div><br>
+  <form>
+    <input type="text" name="search" placeholder="search.." [(ngModel)]="searchtext" (keyup)="search()" style="border:1px solid black;">
+  </form>
+<div class="container">
+    <div class="span">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Name</th>
+          <th>Sector</th>
+          <th>Rate</th>
+          <th>Contract</th>
+          <th>Availability</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let r of resources" [routerLink]="['details/', r.userId]">
+          <img [src]="'../../../../assets/images/uploads/pictures/'+r.photo" height="50px" width="50px">
+          <td>{{r.name}}</td>
+          <td>{{r.sector}}</td>
+          <td>{{r.rate}}</td>
+          <td>{{r.contractType}}</td>
+          <td>{{r.availability}}</td>
+        </tr>
+
+        </tbody>
+      </table>
+  </div>
+</div>
+</section>

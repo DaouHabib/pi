@@ -1,0 +1,36 @@
+<ngb-alert [type]="'success'" [hidden]="!added" (close)="fermer()">Ajouté</ngb-alert>
+
+<form [formGroup]="resForm" (ngSubmit)="ajouter()">
+  Photo:<br/>
+  <input type="file" formControlName="photo" (change)="onFileSelected($event)">
+
+  <br/>
+  Nom:<br/>
+  <input formControlName="nom" type="text" required>
+  <br>
+  <div *ngIf="resForm.get('nom').hasError('required')">
+    ce champs est obligatoire
+  </div>
+  <div *ngIf="resForm.get('nom').hasError('maxlength')">
+    Le nom ne doit pas dépasser 60 caractères
+  </div>
+  <br>
+  Email:<br/>
+  <input formControlName="email" type="text" required>
+  <br>
+  <div *ngIf="resForm.get('email').hasError('required')">
+    ce champs est obligatoire
+  </div>
+  <div *ngIf="resForm.get('email').hasError('pattern')">
+    Email invalide
+  </div>
+  <br>
+
+  Sector (can be modified later): <br/>
+  <input formControlName="sector" type="text"> <br>
+  <br>
+
+  <button class="col-md-3 btn btn-success" type="submit" [disabled]="resForm.invalid">New Resource</button><br/>
+  <button routerLink="/logged/resources" class="col-md-3 btn btn-success">Go back</button>
+</form>
+

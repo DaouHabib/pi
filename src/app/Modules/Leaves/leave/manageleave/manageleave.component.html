@@ -1,0 +1,60 @@
+<ngb-alert [type]="'success'" [hidden]="!added" (close)="close()">Leave has been granted.</ngb-alert>
+
+<section id="browseCategories" class="PageJob-browse" *ngIf="upcoming == false">
+  <div class="col-md-4 text-center">
+    <button (click)="upcomingleaves()" class="col-md-8 btn btn-success" type="submit">View Upcoming Leaves</button>
+  </div>
+  <br>
+  <h3 class="PageJob-category-title">
+    &nbsp;
+  </h3>
+
+  <div *ngFor="let l of leaves">
+
+    <h3 class="PageJob-category-title">
+
+    </h3>
+
+    <ul class="PageJob-browse-list Grid" *ngIf="l.granted==false">
+
+      <li class="Grid-col Grid-col--6 Grid-col--tablet-4 Grid-col--desktopSmall-3">
+        &nbsp;&nbsp;&nbsp;<a class="PageJob-category-link" [routerLink]="['/logged/resources/details/', l.resource.userId]">{{l.resource.name}}</a>
+        asks for a leave from <b>{{l.startDate| date:'dd MMM yyyy'}}</b> to <b>{{l.endDate| date:'dd MMM yyyy'}}</b>
+        <button class="col-sm-2 btn btn-success" type="button" (click)="grant(l.leaveId)" [disabled]="l.granted">Grant</button>
+      </li>
+    </ul>
+    <br/>
+  </div>
+
+  <br>
+
+</section>
+
+<section id="abc" class="PageJob-browse" *ngIf="upcoming == true">
+  <div class="col-md-4 text-center">
+    <button (click)="awaitingleaves()" class="col-md-6 btn btn-success" type="submit">Voir les demandes</button>
+  </div>
+  <br>
+  <h3 class="PageJob-category-title">
+    &nbsp;
+  </h3>
+
+  <div *ngFor="let l of grantedleaves">
+
+    <h3 class="PageJob-category-title">
+
+    </h3>
+
+    <ul class="PageJob-browse-list Grid">
+
+      <li class="Grid-col Grid-col--6 Grid-col--tablet-4 Grid-col--desktopSmall-3">
+        &nbsp;&nbsp;&nbsp;<a class="PageJob-category-link" [routerLink]="['logged/resources/details/', l.resource.userId]">{{l.resource.name}}</a>
+        is taking a leave from <b>{{l.startDate| date:'dd MMM yyyy'}}</b> to <b>{{l.endDate| date:'dd MMM yyyy'}}</b>
+      </li>
+    </ul>
+    <br/>
+  </div>
+
+  <br>
+
+</section>
