@@ -10,17 +10,17 @@ import {NgForm} from '@angular/forms';
   templateUrl: './add-request.component.html',
   styleUrls: ['./add-request.component.css']
     ,
-    providers: [ UserService ]
+    providers: [ RequestService]
 })
 export class AddRequestComponent implements OnInit {
   u : User;
   i : boolean =false;
   e : number = 0;
   t : string ="";
-  constructor(private UserService: UserService) {
+  constructor(private RequestService : RequestService) {
 
-    this.u = this.UserService.getcurrentUser();
 
+      this.u = JSON.parse(localStorage.getItem('currentUser'));
 
 
 
@@ -36,10 +36,11 @@ export class AddRequestComponent implements OnInit {
     clickInterandat(){ this.i =true ;this.e=50;this.t="Interandat";this.newreq.cost=this.e;this.newreq.type=this.t;}
     click(){ this.i =true ;this.e=100; this.t="Mandat";this.newreq.cost=this.e;this.newreq.type=this.t;}
     other(){ this.i =true ;this.e=0; this.t="";this.newreq.cost=this.e;this.newreq.type=this.t;}
+AddRequest ()
+{this.RequestService.AddRequest(this.newreq.cost,this.newreq.datedeb,this.newreq.datefin,this.newreq.duration,this.newreq.type,this.u.userId).subscribe(
+    (data : any)=>{console.log(data);}
 
-
-
-
+);}
     ngOnInit() {
        }
 }

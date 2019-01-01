@@ -36,11 +36,16 @@ export class RequestService {
     Delete  (id)  {
         return this.http.delete("http://localhost:18080/map-web/rest/req/"+id,httpOptions);
     }
-    AddRequest(){this.http.post("/pidev/map-web/rest/mes/addsend?object=test&content=a&type=ada&rssend=2&rsrecu=6",{objet:"test",content:"a",type:"aaa" ,adarssend:2,rsrecu:6}).subscribe(
+    AddRequest(cost :number,startdate : string,endtdate : string,duration :string , type : string,id : number) {
+        return this.http.post("http://localhost:18080/map-web/rest/req/add?idcl=" + id + "&idad=1", {
+            cost: cost,
+            duration: duration,
+            endDate: endtdate,
+            startDate: startdate,
+            typeressource: type
 
-        (data : any)=>{console.log(data);}
-    )}
+        })
 
 
-
+    }
 }

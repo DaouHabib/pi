@@ -12,7 +12,7 @@ export class ClientService {
     getClients (): Observable<Client[]> {
         return this.http.get<Client[]>("http://localhost:18080/map-web/rest/Clients/getall");
     }
-    GetallClient  (id)  {
+    GetallClient  ()  {
         return this.http.get("http://localhost:18080/map-web/rest/Clients/getall");
     }
 

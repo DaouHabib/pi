@@ -17,7 +17,7 @@ r :UserType = UserType.Resource;
 
     constructor(private root: Router) {
         this.user = JSON.parse(localStorage.getItem('currentUser'));
-        console.log(this.user.userType);
+        console.log(this.user);
 
     }
 

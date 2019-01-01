@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
         this.service.login(this.emailAddress, this.password);
 
         this.route.navigate(['logged/Home']);
-
+window.location.reload();
 
     }
 
